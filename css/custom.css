@@ -1,0 +1,185 @@
+@charset "utf-8";
+/* CSS Document */
+
+table {table-layout:fixed; width:70%}
+td {width:50%; padding:0;}	
+.header {font-size:60px;}
+.description {color:grey;}
+#my-story {padding:10px; padding-top:20px; }
+.blue-panel {background-color:#3BB9FF;}
+.blue-panel p {color:white; align:center;}
+strong {font-size:20px;}
+
+ul.affix {
+	position: static; 
+}
+ul.affix-top {
+	position: static;
+}
+ul.affix-bottom {
+	position: static;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: #e5e3e9;
+}
+.sidebar .nav > .active > a,
+.sidebar .nav > .active:hover > a,
+.sidebar .nav > .active:focus > a {
+  font-weight: bold;
+  color: #563d7c;
+  background-color: transparent;
+}
+
+
+
+
+/*header*/
+.header {
+	padding-top: 30px;
+
+}
+
+
+/*home*/
+#home {
+	z-index:-10;
+	position:fixed;
+	top:0;
+	left:0;	
+}
+
+.icons{
+	z-index:0;
+	position:fixed;
+	top:260px;
+	left:35%;
+}
+
+.icons a{
+	opacity:0.7;
+}
+
+.icons a:hover{
+	opacity: 1;
+}
+
+/*collapse*/
+#collapse-container {
+	display:none;
+}
+
+#collapse img {
+	max-width:100%;
+	max-height:100%;
+}
+
+#cross-button {
+	margin: 30px 40px;
+	font-size:20px;
+}
+
+#cross-button.hidden{
+	display: none;
+}
+
+
+
+/*my work gallary*/
+
+.portfolio {
+	float:left;
+    width:200px;	
+	height:220px;
+	background-size:cover;
+	position:relative;
+
+}
+
+div.portfolio a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-decoration: none; /* No underlines on the link */
+    z-index: 20; /* Places the link above everything else in the div */
+    opacity: 0; /* Fix to make div clickable in IE */
+    filter: alpha(opacity=1); /* Fix to make div clickable in IE */
+}
+
+.over {
+	width:200px;
+	height:220px;
+	text-align:center;
+	vertical-align:middle;
+	display:table;
+	position:absolute;
+	color:transparent;
+	z-index:10;
+	text-shadow:none;
+	backgrond-color:transparent;
+	    /* For Safari 3.1 to 6.0 */
+    -webkit-transition: color 0.4s, background-color 0.4s, text-shadow 0.4s;
+    /* Standard syntax */
+    transition:color 0.4s, background-color 0.4s, text-shadow 0.4s;
+}
+
+.over:hover {
+	color:white;
+	background-color:rgba(59,185,255,0.9);
+	text-shadow: 2px 2px 2px grey;
+}
+
+.over h4{
+  display: table-cell; 
+  vertical-align: middle; 
+  text-align: center; 
+  }
+  
+.clear {
+	margin:50px 20px;
+	text-align:left;
+	align:center;
+	clear:both;
+}
+.clear img {max-width:100%; max-height:100%;}
+
+
+
+
+#content {
+	position:relative;
+	top:320px;
+	background-color:white;
+}
+
+/* profile bg-image*/
+#iDo{
+	background-image:url(../image/iDo_GUI.jpg);
+}
+
+#extension {
+	background-image:url(../image/extension.jpg);
+}
+
+#ninjaJump {
+	background-image:url(../image/ninjaJump.jpg);
+}
+
+#busGuide {
+	background-image:url(../image/bus_guide.jpg);
+}
+
+
+/*.col-md-6.template {float:left;}
+*/
+/*footer*/
+#footer {
+	margin-top: 60px;
+	margin-bottom: 0;
+	background-color: black;
+	padding: 10px 0 10px 0;
+}
