@@ -34,13 +34,58 @@ App = (function(){
             });
         },
 
+        addScrollDownTrigger: function(){
+            $('#circle-hint span').click(function() {
+                if(test) console.log("circle hint button clicked");
+                $('html, body').animate({
+                   scrollTop: $(window).height()
+                 });
+            })
+        },
+
         addScrollListener: function(){
-            if(test) console.log("scroll");
             $(window).scroll(function(event){
                 var scrollTop = $(window).scrollTop();
-                var divam = 2;
-                $('#home').css('top', "-"+scrollTop/divam+"px");
+                if(scrollTop >= $(window).height() && $("nav").hasClass("minimized") ){
+                    $("nav").removeClass("minimized");
+                    $("nav").animate({
+                      width:$(window).width() 
+                    },300, function(){
+                        $('nav > *').css('display','block');
+                    })
+                    console.log("show nav")
+                } else if(scrollTop < $(window).height() && !$("nav").hasClass("minimized") ){
+                    $('nav').addClass('minimized');
+                    $('nav > *').css('display','none');
+                    $("nav").animate({
+                      width:0
+                    },100)
+                    console.log("hide nav")
+
+                }
             })
+        },
+
+        addSmoothScroll: function(){
+            $("nav ul li a[href^='#']").on('click', function(e) {
+                if(test) console.log("nav button clicked");
+               // prevent default anchor click behavior
+               e.preventDefault();
+
+               // store hash
+               var hash = this.hash;
+
+               // animate
+               $('html, body').animate({
+                   scrollTop: $(hash).offset().top
+                 }, 300, function(){
+
+                   // when done, add hash to url
+                   // (default click behaviour)
+                   window.location.hash = hash;
+                 });
+
+            });
         }
 
     }
@@ -58,6 +103,8 @@ App = (function(){
 $(document).ready(function(){
     App.addPortfolioListener();
     App.addPortfolioCloseListener();
+    App.addScrollDownTrigger();
     App.addScrollListener();
+    App.addSmoothScroll();
 })
 
