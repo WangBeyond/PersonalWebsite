@@ -1,3 +1,5 @@
+require('newrelic');
+
 var express = require('express'),
     path = require('path'),
     favicon = require('serve-favicon'),
@@ -7,7 +9,6 @@ var express = require('express'),
     http = require('http'),
     routes = require('./routes/index'),
     users = require('./routes/users'),
-    newrelic = require('newrelic'),
 
     app = express();
 
