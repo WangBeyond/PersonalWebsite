@@ -7,6 +7,7 @@ var express = require('express'),
     http = require('http'),
     routes = require('./routes/index'),
     users = require('./routes/users'),
+    newrelic = require('newrelic'),
 
     app = express();
 
